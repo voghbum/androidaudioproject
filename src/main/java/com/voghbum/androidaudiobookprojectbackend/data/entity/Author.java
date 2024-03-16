@@ -2,7 +2,7 @@ package com.voghbum.androidaudiobookprojectbackend.data.entity;
 
 import jakarta.persistence.*;
 
-import java.time.LocalDateTime;
+import java.time.LocalDate;
 
 @Entity
 public class Author {
@@ -10,14 +10,20 @@ public class Author {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
     public long id;
+
     @Column(nullable = false, unique = true)
     public String name;
+
+    @Lob
     @Column()
     public String description;
+
     @Column()
     public String location;
+
     @Column()
     public int bookCount;
+
     @Column()
-    public LocalDateTime birthDate;
+    public LocalDate birthDate;
 }

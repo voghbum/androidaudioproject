@@ -2,24 +2,25 @@ package com.voghbum.androidaudiobookprojectbackend.data.entity;
 
 import jakarta.persistence.*;
 
-import java.sql.Blob;
-import java.sql.Clob;
-
 @Entity
 public class BookFile {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
     public long id;
-    @ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+
+    @ManyToOne(cascade = CascadeType.MERGE, fetch = FetchType.EAGER)
     @JoinColumn(name = "metadata_id", referencedColumnName = "id")
     public BookMetadata bookMetaData;
+
     @Lob
     @Column()
-    public Blob bookAudio;
+    public byte[] bookAudio;
+
     @Lob
     @Column()
-    public Clob bookText;
+    public String body;
+
     @Column()
     public String language;
 }
