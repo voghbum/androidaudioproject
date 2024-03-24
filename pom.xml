@@ -8,15 +8,18 @@
 		<version>3.2.3</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
+
 	<groupId>com.voghbum</groupId>
 	<artifactId>android-audiobook-project-backend</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>anroid audio book project backend </name>
 	<description>backend for Android audio book project</description>
+
 	<properties>
 		<java.version>17</java.version>
 		<spring-ai.version>0.8.0</spring-ai.version>
 	</properties>
+
 	<dependencies>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
@@ -37,8 +40,8 @@
 			<version>1.4.2.Final</version>
 		</dependency>
 		<dependency>
-			<groupId>com.voghum.lib</groupId>
-			<artifactId>com-voghum-lib-texttospeechLib</artifactId>
+			<groupId>com.voghbum.lib</groupId>
+			<artifactId>com-voghbum-lib-texttospeechLib</artifactId>
 			<version>1.0</version>
 		</dependency>
 		<dependency>
@@ -81,14 +84,26 @@
 		</plugins>
 	</build>
 	<repositories>
-		<repository>
+<!--		<repository>
 			<id>spring-milestones</id>
 			<name>Spring Milestones</name>
 			<url>https://repo.spring.io/milestone</url>
 			<snapshots>
 				<enabled>false</enabled>
 			</snapshots>
-		</repository>
+		</repository>-->
+			<repository>
+				<id>nealxyc-github-repo</id>
+				<url>https://raw.githubusercontent.com/voghbum/maven-repo-host/main/mvn-artifact</url>
+				<releases>
+					<enabled>true</enabled>
+					<updatePolicy>daily</updatePolicy>
+				</releases>
+				<snapshots>
+					<enabled>true</enabled>
+					<updatePolicy>always</updatePolicy>
+				</snapshots>
+			</repository>
 	</repositories>
 
 </project>
